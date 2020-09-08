@@ -1,0 +1,171 @@
+{
+    "loadbalancer": {
+        "id": "bd6d7a9c-ecd7-497b-ac99-a10829b02adf",
+        "project_id": "e5bedb978d934e96b434302ef4316492",
+        "name": null,
+        "description": null,
+        "provisioning_status": "PENDING_CREATE",
+        "operating_status": "OFFLINE",
+        "enabled": true,
+        "vip": null,
+        "vrrp_group": null,
+        "topology": "SINGLE",
+        "listeners": [
+            {"id": "a6744ce4-4d2e-4a34-8339-7014f289bfdb"}
+        ],
+        "amphorae": [],
+        "pools": [
+            {"id": "c98c2cc3-4812-41f8-91aa-109559fd2773"}
+        ],
+        "server_group_id": null,
+        "created_at": "2020-09-05T23:18:57",
+        "updated_at": null,
+        "provider": "amphora",
+        "tags": [],
+        "flavor_id": null,
+        "availability_zone": null
+    },
+    "listeners": [
+        {
+            "id": "a6744ce4-4d2e-4a34-8339-7014f289bfdb",
+            "project_id": "e5bedb978d934e96b434302ef4316492",
+            "name": null,
+            "description": null,
+            "default_pool_id": null,
+            "load_balancer_id": "bd6d7a9c-ecd7-497b-ac99-a10829b02adf",
+            "protocol": "HTTP",
+            "protocol_port": 80,
+            "connection_limit": -1,
+            "enabled": true,
+            "provisioning_status": "PENDING_CREATE",
+            "operating_status": "OFFLINE",
+            "tls_certificate_id": null,
+            "stats": null,
+            "default_pool": null,
+            "load_balancer": null,
+            "sni_containers": [],
+            "peer_port": 1025,
+            "l7policies": [],
+            "insert_headers": {
+                "X-Forwarded-For": "True"
+            },
+            "pools": [
+                {"id": "c98c2cc3-4812-41f8-91aa-109559fd2773"}
+            ],
+            "created_at": "2020-09-05T23:23:41",
+            "updated_at": null,
+            "timeout_client_data": 50000,
+            "timeout_member_connect": 5000,
+            "timeout_member_data": 50000,
+            "timeout_tcp_inspect": 0,
+            "tags": [],
+            "client_ca_tls_certificate_id": null,
+            "client_authentication": "NONE",
+            "client_crl_container_id": null,
+            "allowed_cidrs": [],
+            "tls_ciphers": null,
+            "tls_versions": null
+        }
+    ],
+    "pools": [
+        {
+            "id": "c98c2cc3-4812-41f8-91aa-109559fd2773",
+            "project_id": "e5bedb978d934e96b434302ef4316492",
+            "name": null,
+            "description": null,
+            "load_balancer_id": "bd6d7a9c-ecd7-497b-ac99-a10829b02adf",
+            "load_balancer": null,
+            "protocol": "HTTP",
+            "lb_algorithm": "ROUND_ROBIN",
+            "enabled": true,
+            "operating_status": "OFFLINE",
+            "members": [
+                {"id": "b801a50d-1d3c-426c-87c8-1fa2b2632b89"},
+                {"id": "ad00627b-96b1-42ba-9244-9302616670dc"}
+            ],
+            "health_monitor": "eb27a181-8164-458c-8618-5839185b17ce",
+            "session_persistence": null,
+            "listeners": [
+                {"id": "a6744ce4-4d2e-4a34-8339-7014f289bfdb"}
+            ],
+            "l7policies": [],
+            "created_at": "2020-09-05T23:24:14",
+            "updated_at": null,
+            "provisioning_status": "PENDING_CREATE",
+            "tags": [],
+            "tls_certificate_id": null,
+            "ca_tls_certificate_id": null,
+            "crl_container_id": null,
+            "tls_enabled": false,
+            "tls_ciphers": null,
+            "tls_versions": null
+        }
+    ],
+    "members": [
+        {
+            "id": "b801a50d-1d3c-426c-87c8-1fa2b2632b89",
+            "project_id": "e5bedb978d934e96b434302ef4316492",
+            "pool_id": "c98c2cc3-4812-41f8-91aa-109559fd2773",
+            "ip_address": "10.0.0.41",
+            "protocol_port": 80,
+            "weight": 1,
+            "backup": false,
+            "enabled": true,
+            "subnet_id": "1e18dd66-1f1c-473b-9193-71a708938239",
+            "operating_status": "NO_MONITOR",
+            "pool": null,
+            "created_at": "2020-09-05T23:24:31",
+            "updated_at": null,
+            "provisioning_status": "PENDING_CREATE",
+            "name": "node2",
+            "monitor_address": null,
+            "monitor_port": null,
+            "tags": []
+        },
+        {
+            "id": "ad00627b-96b1-42ba-9244-9302616670dc",
+            "project_id": "e5bedb978d934e96b434302ef4316492",
+            "pool_id": "c98c2cc3-4812-41f8-91aa-109559fd2773",
+            "ip_address": "10.0.0.19",
+            "protocol_port": 80,
+            "weight": 1,
+            "backup": false,
+            "enabled": true,
+            "subnet_id": "1e18dd66-1f1c-473b-9193-71a708938239",
+            "operating_status": "NO_MONITOR",
+            "pool": null,
+            "created_at": "2020-09-05T23:24:48",
+            "updated_at": null,
+            "provisioning_status": "PENDING_CREATE",
+            "name": "node1",
+            "monitor_address": null,
+            "monitor_port": null,
+            "tags": []
+        }
+    ],
+    "healthmonitors": [
+        {
+            "id": "eb27a181-8164-458c-8618-5839185b17ce",
+            "project_id": "e5bedb978d934e96b434302ef4316492",
+            "pool_id": "c98c2cc3-4812-41f8-91aa-109559fd2773",
+            "type": "PING",
+            "delay": 5,
+            "timeout": 5,
+            "fall_threshold": 3,
+            "rise_threshold": 3,
+            "http_method": null,
+            "url_path": null,
+            "expected_codes": null,
+            "enabled": true,
+            "pool": null,
+            "provisioning_status": "PENDING_CREATE",
+            "operating_status": "OFFLINE",
+            "name": null,
+            "created_at": "2020-09-05T23:25:07",
+            "updated_at": null,
+            "tags": [],
+            "http_version": null,
+            "domain_name": null
+        }
+    ]
+}

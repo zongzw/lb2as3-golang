@@ -1,0 +1,22 @@
+{
+    "id": "127a1bad-8be8-412b-ae3c-1758ebb7a4d4",
+    "project_id": "6feca183ac364c7a9f5bde57d25cd533",
+    "name": "lb1",
+    "description": null,
+    "provisioning_status": "PENDING_DELETE",
+    "operating_status": "OFFLINE",
+    "enabled": true,
+    "vip": null,
+    "vrrp_group": null,
+    "topology": "SINGLE",
+    "listeners": [],
+    "amphorae": [],
+    "pools": [],
+    "server_group_id": null,
+    "created_at": "2020-09-05T13:28:38",
+    "updated_at": "2020-09-05T13:35:01",
+    "provider": "amphora",
+    "tags": [],
+    "flavor_id": null,
+    "availability_zone": null
+}

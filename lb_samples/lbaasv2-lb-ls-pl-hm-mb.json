@@ -1,0 +1,145 @@
+{
+    "loadbalancer": {
+        "vxlan_vteps": [
+            "10.145.72.60"
+        ],
+        "name": "Load Balancer 2",
+        "provisioning_status": "PENDING_UPDATE",
+        "network_id": "f4a6bf84-444a-41d3-a934-3c10c8e0eea5",
+        "tenant_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+        "admin_state_up": true,
+        "provider": "f5networks",
+        "id": "f4937276-3c48-489d-8aec-ae9549881704",
+        "gre_vteps": [],
+        "pools": [
+            {
+                "id": "204bdf84-af71-4e5b-962e-5458f06e70c5"
+            }
+        ],
+        "listeners": [
+            {
+                "id": "d69ed0fc-823d-4a62-8d4a-50dab2ec8705"
+            }
+        ],
+        "vip_port_id": "5828234b-dad6-428f-b052-66aa4e808419",
+        "vip_address": "10.0.0.152",
+        "vip_subnet_id": "b6fc5c77-d727-456e-bbd8-67a82534676c",
+        "vip_port": {
+            "allowed_address_pairs": [],
+            "extra_dhcp_opts": [],
+            "updated_at": "2020-09-04T08:50:33Z",
+            "device_owner": "network:f5lbaasv2",
+            "revision_number": 6,
+            "port_security_enabled": true,
+            "binding:profile": {},
+            "fixed_ips": [
+                {
+                    "subnet_id": "b6fc5c77-d727-456e-bbd8-67a82534676c",
+                    "ip_address": "10.0.0.152"
+                },
+                {
+                    "subnet_id": "2988ebde-b5b1-4d7f-aece-d171c05d59a4",
+                    "ip_address": "fde8:3508:8a39:0:f816:3eff:fe52:81d1"
+                }
+            ],
+            "id": "5828234b-dad6-428f-b052-66aa4e808419",
+            "security_groups": [
+                "95118902-632b-42af-9646-ca619f3ebf36"
+            ],
+            "binding:vif_details": {},
+            "binding:vif_type": "binding_failed",
+            "mac_address": "fa:16:3e:52:81:d1",
+            "project_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+            "status": "DOWN",
+            "binding:host_id": "ubuntu1604:d1cf27ce-1286-52fe-9703-c8fd6082b6b6",
+            "description": null,
+            "tags": [],
+            "device_id": "f4937276-3c48-489d-8aec-ae9549881704",
+            "name": "loadbalancer-f4937276-3c48-489d-8aec-ae9549881704",
+            "admin_state_up": true,
+            "network_id": "f4a6bf84-444a-41d3-a934-3c10c8e0eea5",
+            "tenant_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+            "created_at": "2020-09-04T08:50:31Z",
+            "binding:vnic_type": "baremetal"
+        },
+        "operating_status": "ONLINE",
+        "description": ""
+    },
+    "listeners": [
+        {
+            "l7_policies": [],
+            "protocol": "HTTP",
+            "description": "",
+            "default_tls_container_id": null,
+            "tenant_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+            "admin_state_up": true,
+            "connection_limit": -1,
+            "id": "d69ed0fc-823d-4a62-8d4a-50dab2ec8705",
+            "protocol_port": 80,
+            "sni_containers": [],
+            "provisioning_status": "PENDING_CREATE",
+            "default_pool_id": "204bdf84-af71-4e5b-962e-5458f06e70c5",
+            "loadbalancer_id": "f4937276-3c48-489d-8aec-ae9549881704",
+            "operating_status": "OFFLINE",
+            "name": "Listener 1"
+        }
+    ],
+    "pools": [
+        {
+            "lb_algorithm": "LEAST_CONNECTIONS",
+            "protocol": "HTTP",
+            "description": "",
+            "provisioning_status": "ACTIVE",
+            "tenant_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+            "l7_policies": [],
+            "loadbalancer_id": "f4937276-3c48-489d-8aec-ae9549881704",
+            "healthmonitor_id": "35b37f5a-e9ce-4831-ab1a-008fa389a6e9",
+            "members": [
+                {
+                    "id": "0368891f-48db-484e-900a-e6aca8eefb39"
+                }
+            ],
+            "admin_state_up": true,
+            "sessionpersistence": null,
+            "id": "204bdf84-af71-4e5b-962e-5458f06e70c5",
+            "operating_status": "ONLINE",
+            "name": "Pool 1"
+        }
+    ],
+    "members": [
+        {
+            "name": "",
+            "weight": 1,
+            "admin_state_up": true,
+            "subnet_id": "dfe1bdf9-a32a-4a09-b744-225aa5dc289d",
+            "tenant_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+            "provisioning_status": "PENDING_CREATE",
+            "pool_id": "204bdf84-af71-4e5b-962e-5458f06e70c5",
+            "gre_vteps": [],
+            "network_id": "9cfc26bf-cd88-4de6-9c9d-17cadb5d6faa",
+            "address": "1.2.3.5",
+            "protocol_port": 80,
+            "id": "0368891f-48db-484e-900a-e6aca8eefb39",
+            "operating_status": "OFFLINE",
+            "vxlan_vteps": []
+        }
+    ],
+    "healthmonitors": [
+        {
+            "name": "",
+            "provisioning_status": "PENDING_CREATE",
+            "tenant_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+            "admin_state_up": true,
+            "pool_id": "204bdf84-af71-4e5b-962e-5458f06e70c5",
+            "delay": 5,
+            "expected_codes": "200",
+            "max_retries": 3,
+            "http_method": "GET",
+            "timeout": 5,
+            "max_retries_down": 3,
+            "url_path": "/",
+            "type": "PING",
+            "id": "35b37f5a-e9ce-4831-ab1a-008fa389a6e9"
+        }
+    ]
+}

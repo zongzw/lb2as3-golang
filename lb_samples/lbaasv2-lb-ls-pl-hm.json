@@ -1,0 +1,78 @@
+{
+    "loadbalancer": {
+        "description": "",
+        "provisioning_status": "PENDING_CREATE",
+        "tenant_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+        "admin_state_up": true,
+        "provider": null,
+        "pools": [
+            {
+                "id": "2d0e84ed-8b91-43cc-98a2-a788d5bd40b4"
+            }
+        ],
+        "listeners": [
+            {
+                "id": "d81465fb-d00d-4394-8a31-845c34debc9d"
+            }
+        ],
+        "vip_port_id": "9bf3f4a2-1712-47ed-b25f-ef54236c8c52",
+        "vip_address": "172.24.4.29",
+        "vip_subnet_id": "dfe1bdf9-a32a-4a09-b744-225aa5dc289d",
+        "id": "b1bb186f-a4b9-4173-ab15-f956a13f5a04",
+        "operating_status": "OFFLINE",
+        "name": "Load Balancer 1"
+    },
+    "listeners": [
+        {
+            "protocol_port": 80,
+            "protocol": "HTTP",
+            "description": "",
+            "default_tls_container_id": null,
+            "tenant_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+            "l7_policies": [],
+            "connection_limit": -1,
+            "id": "d81465fb-d00d-4394-8a31-845c34debc9d",
+            "admin_state_up": true,
+            "sni_containers": [],
+            "provisioning_status": "PENDING_CREATE",
+            "default_pool_id": "2d0e84ed-8b91-43cc-98a2-a788d5bd40b4",
+            "loadbalancer_id": "b1bb186f-a4b9-4173-ab15-f956a13f5a04",
+            "operating_status": "OFFLINE",
+            "name": "Listener 1"
+        }
+    ],
+    "pools": [
+        {
+            "lb_algorithm": "ROUND_ROBIN",
+            "protocol": "HTTP",
+            "description": "",
+            "admin_state_up": true,
+            "tenant_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+            "provisioning_status": "PENDING_CREATE",
+            "loadbalancer_id": "b1bb186f-a4b9-4173-ab15-f956a13f5a04",
+            "healthmonitor_id": "3af5a70a-b370-4f89-b78f-71f095116d2b",
+            "sessionpersistence": null,
+            "id": "2d0e84ed-8b91-43cc-98a2-a788d5bd40b4",
+            "operating_status": "OFFLINE",
+            "name": "Pool 1"
+        }
+    ],
+    "healthmonitors": [
+        {
+          "name": "",
+          "provisioning_status": "PENDING_CREATE",
+          "tenant_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+          "admin_state_up": true,
+          "pool_id": "2d0e84ed-8b91-43cc-98a2-a788d5bd40b4",
+          "delay": 5,
+          "expected_codes": "200",
+          "max_retries": 3,
+          "http_method": "GET",
+          "timeout": 5,
+          "max_retries_down": 3,
+          "url_path": "/",
+          "type": "PING",
+          "id": "3af5a70a-b370-4f89-b78f-71f095116d2b"
+        }
+      ]
+}

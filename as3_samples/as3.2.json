@@ -1,0 +1,45 @@
+{
+    "$schema": "file:///Users/zong/GitRepos/f5networks/f5-appsvcs-extension/schema/3.21.0/as3-schema.json",
+    "class": "AS3",
+    "action": "deploy",
+    "declaration": {
+        "class": "ADC",
+        "schemaVersion": "3.19.0",
+        "updateMode": "complete",
+        "target": {
+            "address": "10.145.71.199"
+        },
+        "id": "urn:uuid:33045210-3ab8-4636-9b2a-c98d22ab915d",
+        "remark": "any description string..",
+        "mytenant": {
+            "class": "Tenant",
+            "aaaa": {
+                "class": "Application",
+                "template": "generic",
+                "myservice": {
+                    "class": "Service_HTTP",
+                    "virtualAddresses": [
+                        "10.0.1.134"
+                    ],
+                    "pool": "mypool"
+                    
+                },
+                "mypool": {
+                    "class": "Pool",
+                    "monitors": [
+                        "http"
+                    ],
+                    "members": [
+                        {
+                            "servicePort": 80,
+                            "serverAddresses": [
+                                "10.10.10.128",
+                                "10.10.10.133"
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
