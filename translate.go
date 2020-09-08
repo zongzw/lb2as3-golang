@@ -145,6 +145,12 @@ func ConstructService(lbbundle LBBundle, app map[string]interface{}) {
         } else if found.Protocol == "TCP" {
             serv["class"] = "Service_TCP"
             serv["virtualPort"] = found.ProtocolPort
+        } else if found.Protocol == "HTTPS" {
+            serv["class"] = "Service_HTTPS"
+            serv["virtualPort"] = found.ProtocolPort
+        } else if found.Protocol == "TERMINATED_HTTPS" {
+            serv["serverTLS"] = "CERT_xxxx" // TODO: need to handle certificate
+            serv["redirect80"] = false
         }
 
         serv["virtualAddresses"] = []string{
@@ -179,8 +185,8 @@ func ConstructPool(
     }
     if found.LbAlgorithm == "LEAST_CONNECTIONS" {
         pool["loadBalancingMode"] = "least-connections-member"
-    } else if found.LbAlgorithm == "xxxxxxxx" {
-
+    } else if found.LbAlgorithm == "SOURCE_IP" {
+        pool["loadBalancingMode"] = "least-connections-node"
     }
 
     ConstructHealthMonitor(lbbundle, found.HealthmonitorId, app)

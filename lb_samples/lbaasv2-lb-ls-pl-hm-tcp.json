@@ -35,7 +35,7 @@
             "fixed_ips": [
                 {
                     "subnet_id": "b6fc5c77-d727-456e-bbd8-67a82534676c",
-                    "ip_address": "10.0.0.13"
+                    "ip_address": "10.0.0.113"
                 },
                 {
                     "subnet_id": "2988ebde-b5b1-4d7f-aece-d171c05d59a4",
@@ -103,7 +103,6 @@
         }
     ],
     "members": [],
-    "l7policy_rules": [],
     "pools": [
         {
             "lb_algorithm": "SOURCE_IP",
@@ -122,5 +121,6 @@
             "name": "Pool 1"
         }
     ],
-    "l7policies": []
+    "l7policies": [],
+    "l7policy_rules": []
 }
