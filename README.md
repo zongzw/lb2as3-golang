@@ -12,7 +12,9 @@ The loadbalancer json should meet the following format requirements.
         "listeners": [],
         "pools": [],
         "members": [],
-        "healthmonitors": []
+        "healthmonitors": [],
+        "l7policies": [],
+        "l7policy_rules": [],
     }
     ```
 
@@ -28,12 +30,14 @@ In real practice, lbaasv2/octavia passes the bundle of loadbalancer object **pie
 
 The loadbalancer and its sub objects are created by steps: 
 
+The `*` means possible multi-times.
 ```
    -> create_load_balancer 
    -> create_listener* 
    -> create_pool* 
    -> create_member* 
    -> create_health_monitor*
+   ...
 ```
 
 So if you plan to use as3 declaration for loadbalancer deployment, you should have a way to compose the above loadbalancer object instead of translating/deploying multi-times for all the pieces.

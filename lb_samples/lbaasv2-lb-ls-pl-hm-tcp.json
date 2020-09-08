@@ -1,0 +1,126 @@
+{
+    "loadbalancer": {
+        "vxlan_vteps": [
+            "10.145.72.60"
+        ],
+        "name": "Load Balancer 3",
+        "provisioning_status": "PENDING_UPDATE",
+        "network_id": "f4a6bf84-444a-41d3-a934-3c10c8e0eea5",
+        "tenant_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+        "admin_state_up": true,
+        "provider": "f5networks",
+        "id": "20364bbd-c844-4563-966c-7f4e3b927462",
+        "gre_vteps": [],
+        "pools": [
+            {
+                "id": "ffbb40a4-770f-40fc-a008-e7efe9cbe758"
+            }
+        ],
+        "listeners": [
+            {
+                "id": "f06812cb-dca5-4679-b8f8-cb8bba82b0f2"
+            }
+        ],
+        "vip_port_id": "1c9a365a-c98d-4b82-903d-9b2d0a9bea86",
+        "vip_address": "10.0.0.13",
+        "vip_subnet_id": "b6fc5c77-d727-456e-bbd8-67a82534676c",
+        "vip_port": {
+            "allowed_address_pairs": [],
+            "extra_dhcp_opts": [],
+            "updated_at": "2020-09-08T04:19:27Z",
+            "device_owner": "network:f5lbaasv2",
+            "revision_number": 6,
+            "port_security_enabled": true,
+            "binding:profile": {},
+            "fixed_ips": [
+                {
+                    "subnet_id": "b6fc5c77-d727-456e-bbd8-67a82534676c",
+                    "ip_address": "10.0.0.13"
+                },
+                {
+                    "subnet_id": "2988ebde-b5b1-4d7f-aece-d171c05d59a4",
+                    "ip_address": "fde8:3508:8a39:0:f816:3eff:feab:2e7a"
+                }
+            ],
+            "id": "1c9a365a-c98d-4b82-903d-9b2d0a9bea86",
+            "security_groups": [
+                "95118902-632b-42af-9646-ca619f3ebf36"
+            ],
+            "binding:vif_details": {},
+            "binding:vif_type": "binding_failed",
+            "mac_address": "fa:16:3e:ab:2e:7a",
+            "project_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+            "status": "DOWN",
+            "binding:host_id": "ubuntu1604:d1cf27ce-1286-52fe-9703-c8fd6082b6b6",
+            "description": null,
+            "tags": [],
+            "device_id": "20364bbd-c844-4563-966c-7f4e3b927462",
+            "name": "loadbalancer-20364bbd-c844-4563-966c-7f4e3b927462",
+            "admin_state_up": true,
+            "network_id": "f4a6bf84-444a-41d3-a934-3c10c8e0eea5",
+            "tenant_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+            "created_at": "2020-09-08T04:19:25Z",
+            "binding:vnic_type": "baremetal"
+        },
+        "operating_status": "ONLINE",
+        "description": ""
+    },
+    "listeners": [
+        {
+            "l7_policies": [],
+            "protocol": "TCP",
+            "description": "",
+            "default_tls_container_id": null,
+            "tenant_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+            "admin_state_up": true,
+            "connection_limit": -1,
+            "id": "f06812cb-dca5-4679-b8f8-cb8bba82b0f2",
+            "protocol_port": 80,
+            "sni_containers": [],
+            "provisioning_status": "ACTIVE",
+            "default_pool_id": "ffbb40a4-770f-40fc-a008-e7efe9cbe758",
+            "loadbalancer_id": "20364bbd-c844-4563-966c-7f4e3b927462",
+            "operating_status": "ONLINE",
+            "name": "Listener 1"
+        }
+    ],
+    "healthmonitors": [
+        {
+            "name": "",
+            "provisioning_status": "PENDING_CREATE",
+            "tenant_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+            "admin_state_up": true,
+            "pool_id": "ffbb40a4-770f-40fc-a008-e7efe9cbe758",
+            "delay": 5,
+            "expected_codes": "200",
+            "max_retries": 3,
+            "http_method": "GET",
+            "timeout": 5,
+            "max_retries_down": 3,
+            "url_path": "/",
+            "type": "HTTP",
+            "id": "e7695bfe-c366-4478-8039-625a1c1f3ec6"
+        }
+    ],
+    "members": [],
+    "l7policy_rules": [],
+    "pools": [
+        {
+            "lb_algorithm": "SOURCE_IP",
+            "protocol": "TCP",
+            "description": "",
+            "provisioning_status": "ACTIVE",
+            "tenant_id": "1d78c8bd2bc44081a2fbe8c124c570eb",
+            "l7_policies": [],
+            "loadbalancer_id": "20364bbd-c844-4563-966c-7f4e3b927462",
+            "healthmonitor_id": "e7695bfe-c366-4478-8039-625a1c1f3ec6",
+            "members": [],
+            "admin_state_up": true,
+            "sessionpersistence": null,
+            "id": "ffbb40a4-770f-40fc-a008-e7efe9cbe758",
+            "operating_status": "ONLINE",
+            "name": "Pool 1"
+        }
+    ],
+    "l7policies": []
+}

@@ -5,6 +5,7 @@
         80
     ],
     "editor.tabSize": 4,
+    "editor.useTabStops": true,
     "editor.insertSpaces": true,
     "editor.detectIndentation": true
 }
