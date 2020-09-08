@@ -231,6 +231,13 @@ func ConstructHealthMonitor(
         hm["monitorType"] = "icmp"
     } else if found.Type == "HTTP" {
         hm["monitorType"] = "http"
+        hm["send"] = fmt.Sprintf(
+            "%s %s HTTP/1.0\\r\\n", found.HttpMethod, found.UrlPath,
+        )
+        // TODO: handle the cases of '200, 301' or 200-399
+        hm["receive"] = fmt.Sprintf(
+            "HTTP/1.(0|1) %s", found.ExpectedCodes,
+        )
 
     } else if found.Type == "TCP" {
         hm["monitorType"] = "tcp"
